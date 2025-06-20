@@ -7,102 +7,135 @@ import RecipeDetail from './components/RecipeDetail';
 import { AuthForm } from './components/AuthForm';
 import FavoritesList from './components/FavoritesList';
 
-// Mock data, replace with API fetches in integration step
-const mockCategories = [
-  "Breakfast", "Lunch", "Dinner", "Snack", "Dessert"
-];
-const mockRecipes = [
-  {
-    id: 1,
-    title: "Avocado Toast",
-    image: '',
-    category: "Breakfast",
-    ingredients: ["2 slice sourdough", "1 ripe avocado", "Salt", "Pepper"],
-    instructions: [
-      "Toast the bread.",
-      "Mash avocado onto toast.",
-      "Season with salt and pepper."
-    ]
-  },
-  {
-    id: 2,
-    title: "Spaghetti Carbonara",
-    image: '',
-    category: "Dinner",
-    ingredients: [
-      "100g spaghetti", "2 eggs", "50g pancetta", "Parmesan", "Black pepper"
-    ],
-    instructions: [
-      "Cook pasta.",
-      "Fry pancetta.",
-      "Mix eggs and cheese, combine with pasta and pancetta.",
-      "Serve hot."
-    ]
-  }
-];
+import {
+  login as apiLogin,
+  signup as apiSignup,
+  logout as apiLogout,
+  setToken,
+  getToken,
+  getCategories,
+  getRecipes,
+  getRecipe,
+  getFavorites,
+  addFavorite,
+  removeFavorite,
+} from './api';
 
 function App() {
   // State: auth, navigation
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(Boolean(getToken()));
   const [authMode, setAuthMode] = useState('login'); // or 'signup'
   const [authError, setAuthError] = useState('');
   const [authLoading, setAuthLoading] = useState(false);
 
-  // UI state
+  // UI/state
   const [category, setCategory] = useState(null);
+  const [categories, setCategories] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedRecipeId, setSelectedRecipeId] = useState(null);
   const [showFavorites, setShowFavorites] = useState(false);
+  const [loadingRecipes, setLoadingRecipes] = useState(false);
 
-  // Data simulation
-  const [recipes, setRecipes] = useState(mockRecipes);
-  // In real usage, favorites would come from user/account data
+  // Data
+  const [recipes, setRecipes] = useState([]);
   const [favorites, setFavorites] = useState([]);
+
+  // Status/feedback
+  const [uiMessage, setUiMessage] = useState('');
+  const [uiError, setUiError] = useState('');
+
+  // Fetch recipe categories on login & first mount
+  useEffect(() => {
+    if (!isAuthenticated) {
+      setCategories([]);
+      return;
+    }
+    getCategories()
+      .then(cats => setCategories(cats))
+      .catch(() => setCategories([]));
+  }, [isAuthenticated]);
+
+  // Fetch recipes when category/search changes OR after login
+  useEffect(() => {
+    if (!isAuthenticated) return;
+    setLoadingRecipes(true);
+    getRecipes({ category, search: searchTerm })
+      .then(rs => {
+        setRecipes(rs);
+        setLoadingRecipes(false);
+        setUiError('');
+      })
+      .catch(err => {
+        setUiError(err.message || 'Failed to load recipes');
+        setLoadingRecipes(false);
+      });
+  }, [isAuthenticated, category, searchTerm]);
+
+  // Fetch favorites on login or after favorite change
+  useEffect(() => {
+    if (!isAuthenticated) {
+      setFavorites([]);
+      return;
+    }
+    getFavorites()
+      .then(favs => {
+        setFavorites(favs);
+      })
+      .catch(() => setFavorites([]));
+  }, [isAuthenticated]);
+
+  // On logout: clear all user data/state
+  const doLogout = () => {
+    apiLogout();
+    setIsAuthenticated(false);
+    setShowFavorites(false);
+    setSelectedRecipeId(null);
+    setUiError('');
+    setRecipes([]);
+    setFavorites([]);
+    setCategory(null);
+    setSearchTerm('');
+  };
 
   // Handlers: Auth
   const handleLogin = () => {
+    // Just display login form
     setAuthError('');
     setAuthLoading(false);
     setAuthMode('login');
-    setIsAuthenticated(false);
-    setShowFavorites(false);
-    setSelectedRecipeId(null);
+    setUiError('');
+    setUiMessage('');
+    doLogout();
   };
   const handleLogout = () => {
-    setIsAuthenticated(false);
-    setShowFavorites(false);
-    setSelectedRecipeId(null);
+    doLogout();
   };
-  const handleAuthSubmit = ({ email, password }) => {
+  const handleAuthSubmit = async ({ email, password }) => {
     setAuthLoading(true);
-    setTimeout(() => { // Replace with real API
-      setAuthLoading(false);
-      if (email === 'user@example.com' && password === 'test') {
-        setIsAuthenticated(true);
-        setAuthError('');
-        setShowFavorites(false);
-      } else if (authMode === 'signup') {
-        setIsAuthenticated(true);
-        setAuthError('');
-        setShowFavorites(false);
+    setAuthError('');
+    setUiError('');
+    try {
+      let data;
+      if (authMode === 'login') {
+        data = await apiLogin(email, password);
       } else {
-        setAuthError('Invalid credentials');
+        data = await apiSignup(email, password);
       }
-    }, 800);
+      setToken(data.token);
+      setIsAuthenticated(true);
+      setAuthError('');
+      setUiMessage('');
+      setShowFavorites(false);
+    } catch (e) {
+      setAuthError(e.message || 'Authentication failed');
+      setUiError('');
+      setIsAuthenticated(false);
+    } finally {
+      setAuthLoading(false);
+    }
   };
   const toggleAuthMode = () =>
     setAuthMode(m => (m === 'login' ? 'signup' : 'login'));
-
-  // Filtered recipes (mock local)
-  const filteredRecipes = recipes.filter(r => {
-    const term = searchTerm.trim().toLowerCase();
-    const matchCat = !category || r.category === category;
-    const matchTerm =
-      !term ||
-      r.title.toLowerCase().includes(term) ||
-      (r.ingredients && r.ingredients.join(' ').toLowerCase().includes(term));
-    return matchCat && matchTerm;
-  });
 
   // Recipe details
   const selectedRecipe =
@@ -113,11 +146,22 @@ function App() {
   // Favorites management
   const isFavorite = recipe =>
     favorites.some(fav => fav.id === recipe.id);
-  const handleToggleFavorite = recipe => {
-    if (isFavorite(recipe)) {
-      setFavorites(favs => favs.filter(fav => fav.id !== recipe.id));
-    } else {
-      setFavorites(favs => [...favs, recipe]);
+  const handleToggleFavorite = async recipe => {
+    if (!recipe) return;
+    try {
+      if (isFavorite(recipe)) {
+        await removeFavorite(recipe.id);
+        setFavorites(favs => favs.filter(fav => fav.id !== recipe.id));
+        setUiMessage('Removed from favorites');
+      } else {
+        await addFavorite(recipe.id);
+        setFavorites(favs => [...favs, recipe]);
+        setUiMessage('Added to favorites');
+      }
+      setUiError('');
+    } catch (e) {
+      setUiError(e.message || 'Error updating favorites');
+      setUiMessage('');
     }
   };
   const handleSelectRecipeFromFavorites = id => {
@@ -125,7 +169,7 @@ function App() {
     setSelectedRecipeId(id);
   };
 
-  // Layout navigation: Main / Favorites / Auth
+  // Main content/conditional rendering
   let mainContent;
   if (!isAuthenticated) {
     mainContent = (
@@ -156,7 +200,7 @@ function App() {
   } else {
     mainContent = (
       <RecipeList
-        recipes={filteredRecipes}
+        recipes={recipes}
         onSelect={id => setSelectedRecipeId(id)}
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
@@ -177,7 +221,7 @@ function App() {
       <div className="layout-main">
         {isAuthenticated && (
           <Sidebar
-            categories={mockCategories}
+            categories={categories}
             selected={category}
             onSelectCategory={cat => {
               setCategory(cat);
@@ -203,7 +247,26 @@ function App() {
               </button>
             </div>
           )}
-          {mainContent}
+          {/* User feedback/errors */}
+          {uiError && (
+            <div style={{
+              color: '#ff7b7b',
+              background: '#2a1620',
+              borderRadius: '6px',
+              padding: '10px 14px', margin: '12px 0'
+            }}>{uiError}</div>
+          )}
+          {uiMessage && (
+            <div style={{
+              color: '#1ebd7a',
+              background: '#183c26',
+              borderRadius: '6px',
+              padding: '10px 14px', margin: '12px 0'
+            }}>{uiMessage}</div>
+          )}
+          {loadingRecipes ? <div style={{
+            padding: '25px 0', color: 'var(--text-secondary)', fontSize: '1.13rem'
+          }}>Loading recipes...</div> : mainContent}
         </main>
       </div>
     </div>
