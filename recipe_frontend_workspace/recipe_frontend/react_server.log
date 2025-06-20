@@ -23,3 +23,276 @@ modules by path ./.ve/ 15.1 KiB
     ./node_modules/css-loader/dist/cjs.js!./.ve/EditorOverlay.css 697 bytes [built] [code generated]
   ./.ve/EditorOverlay.jsx 1.58 KiB [built] [code generated]
 webpack 5.99.9 compiled successfully in 1588 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.45 MiB
+  asset bundle.js 1.42 MiB [emitted] (name: main)
+  asset main.4bc360c4fbac73a7323d.hot-update.js 33.2 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.4bc360c4fbac73a7323d.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.45 MiB = bundle.js 1.42 MiB main.4bc360c4fbac73a7323d.hot-update.js 33.2 KiB
+cached modules 1.26 MiB [cached] 41 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 19.3 KiB
+  ./src/App.js 6.33 KiB [built] [code generated]
+  ./src/components/Navbar.js 1.64 KiB [built] [code generated]
+  ./src/components/Sidebar.js 1.23 KiB [built] [code generated]
+  ./src/components/RecipeList.js 2.17 KiB [built] [code generated]
+  ./src/components/RecipeDetail.js 2.99 KiB [built] [code generated]
+  ./src/components/AuthForm.js 3.03 KiB [built] [code generated]
+  ./src/components/FavoritesList.js 1.91 KiB [built] [code generated]
+
+ERROR in ./src/components/AuthForm.js 2:0-24
+Module not found: Error: Can't resolve './AuthForm.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+ @ ./src/App.js 7:0-49 112:36-44
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/components/FavoritesList.js 2:0-29
+Module not found: Error: Can't resolve './FavoritesList.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+ @ ./src/App.js 8:0-55 121:36-49
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/components/Navbar.js 2:0-22
+Module not found: Error: Can't resolve './Navbar.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+ @ ./src/App.js 3:0-41 153:33-39
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/components/RecipeDetail.js 2:0-28
+Module not found: Error: Can't resolve './RecipeDetail.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+ @ ./src/App.js 6:0-53 127:36-48
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/components/RecipeList.js 2:0-26
+Module not found: Error: Can't resolve './RecipeList.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+ @ ./src/App.js 5:0-49 135:36-46
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/components/Sidebar.js 2:0-23
+Module not found: Error: Can't resolve './Sidebar.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+ @ ./src/App.js 4:0-43 159:54-61
+ @ ./src/index.js 5:0-24 11:32-35
+
+6 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 6 errors in 222 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.44 MiB
+  asset bundle.js 1.43 MiB [emitted] (name: main)
+  asset main.e9b986445c933b0b050b.hot-update.js 14.3 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.e9b986445c933b0b050b.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.44 MiB = bundle.js 1.43 MiB main.e9b986445c933b0b050b.hot-update.js 14.3 KiB
+cached modules 1.28 MiB [cached] 47 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 5.09 KiB
+  ./src/components/Navbar.js 1.64 KiB [code generated]
+  ./src/components/Navbar.css 2.26 KiB [built] [code generated]
+  ./node_modules/css-loader/dist/cjs.js!./src/components/Navbar.css 1.19 KiB [built] [code generated]
+
+ERROR in ./src/components/AuthForm.js 2:0-24
+Module not found: Error: Can't resolve './AuthForm.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+ @ ./src/App.js 7:0-49 112:36-44
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/components/FavoritesList.js 2:0-29
+Module not found: Error: Can't resolve './FavoritesList.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+ @ ./src/App.js 8:0-55 121:36-49
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/components/RecipeDetail.js 2:0-28
+Module not found: Error: Can't resolve './RecipeDetail.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+ @ ./src/App.js 6:0-53 127:36-48
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/components/RecipeList.js 2:0-26
+Module not found: Error: Can't resolve './RecipeList.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+ @ ./src/App.js 5:0-49 135:36-46
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/components/Sidebar.js 2:0-23
+Module not found: Error: Can't resolve './Sidebar.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+ @ ./src/App.js 4:0-43 159:54-61
+ @ ./src/index.js 5:0-24 11:32-35
+
+5 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 5 errors in 50 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.45 MiB
+  asset bundle.js 1.44 MiB [emitted] (name: main)
+  asset main.61016202edb1f8045586.hot-update.js 13.8 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.61016202edb1f8045586.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.45 MiB = bundle.js 1.44 MiB main.61016202edb1f8045586.hot-update.js 13.8 KiB
+cached modules 1.28 MiB [cached] 49 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 4.71 KiB
+  ./src/components/Sidebar.js 1.23 KiB [code generated]
+  ./src/components/Sidebar.css 2.26 KiB [built] [code generated]
+  ./node_modules/css-loader/dist/cjs.js!./src/components/Sidebar.css 1.21 KiB [built] [code generated]
+
+ERROR in ./src/components/AuthForm.js 2:0-24
+Module not found: Error: Can't resolve './AuthForm.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+ @ ./src/App.js 7:0-49 112:36-44
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/components/FavoritesList.js 2:0-29
+Module not found: Error: Can't resolve './FavoritesList.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+ @ ./src/App.js 8:0-55 121:36-49
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/components/RecipeDetail.js 2:0-28
+Module not found: Error: Can't resolve './RecipeDetail.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+ @ ./src/App.js 6:0-53 127:36-48
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/components/RecipeList.js 2:0-26
+Module not found: Error: Can't resolve './RecipeList.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+ @ ./src/App.js 5:0-49 135:36-46
+ @ ./src/index.js 5:0-24 11:32-35
+
+4 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 4 errors in 39 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.47 MiB
+  asset bundle.js 1.45 MiB [emitted] (name: main)
+  asset main.270c7c6d66e3b6d7fafb.hot-update.js 15.8 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.270c7c6d66e3b6d7fafb.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.47 MiB = bundle.js 1.45 MiB main.270c7c6d66e3b6d7fafb.hot-update.js 15.8 KiB
+cached modules 1.29 MiB [cached] 51 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 6.26 KiB
+  ./src/components/RecipeList.js 2.17 KiB [code generated]
+  ./src/components/RecipeList.css 2.27 KiB [built] [code generated]
+  ./node_modules/css-loader/dist/cjs.js!./src/components/RecipeList.css 1.82 KiB [built] [code generated]
+
+ERROR in ./src/components/AuthForm.js 2:0-24
+Module not found: Error: Can't resolve './AuthForm.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+ @ ./src/App.js 7:0-49 112:36-44
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/components/FavoritesList.js 2:0-29
+Module not found: Error: Can't resolve './FavoritesList.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+ @ ./src/App.js 8:0-55 121:36-49
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/components/RecipeDetail.js 2:0-28
+Module not found: Error: Can't resolve './RecipeDetail.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+ @ ./src/App.js 6:0-53 127:36-48
+ @ ./src/index.js 5:0-24 11:32-35
+
+3 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 3 errors in 53 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.48 MiB
+  asset bundle.js 1.46 MiB [emitted] (name: main)
+  asset main.f2a1a36c04778f0349a7.hot-update.js 16.9 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.f2a1a36c04778f0349a7.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.48 MiB = bundle.js 1.46 MiB main.f2a1a36c04778f0349a7.hot-update.js 16.9 KiB
+cached modules 1.29 MiB [cached] 53 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 6.93 KiB
+  ./src/components/RecipeDetail.js 2.99 KiB [code generated]
+  ./src/components/RecipeDetail.css 2.27 KiB [built] [code generated]
+  ./node_modules/css-loader/dist/cjs.js!./src/components/RecipeDetail.css 1.67 KiB [built] [code generated]
+
+ERROR in ./src/components/AuthForm.js 2:0-24
+Module not found: Error: Can't resolve './AuthForm.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+resolve './AuthForm.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+  using description file: /home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/package.json (relative path: ./src/components)
+    Field 'browser' doesn't contain a valid alias configuration
+    using description file: /home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/package.json (relative path: ./src/components/AuthForm.css)
+      no extension
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components/AuthForm.css doesn't exist
+      .js
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components/AuthForm.css.js doesn't exist
+      .jsx
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components/AuthForm.css.jsx doesn't exist
+      as directory
+        /home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components/AuthForm.css doesn't exist
+ @ ./src/App.js 7:0-49 112:36-44
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/components/FavoritesList.js 2:0-29
+Module not found: Error: Can't resolve './FavoritesList.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+resolve './FavoritesList.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+  using description file: /home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/package.json (relative path: ./src/components)
+    Field 'browser' doesn't contain a valid alias configuration
+    using description file: /home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/package.json (relative path: ./src/components/FavoritesList.css)
+      no extension
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components/FavoritesList.css doesn't exist
+      .js
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components/FavoritesList.css.js doesn't exist
+      .jsx
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components/FavoritesList.css.jsx doesn't exist
+      as directory
+        /home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components/FavoritesList.css doesn't exist
+ @ ./src/App.js 8:0-55 121:36-49
+ @ ./src/index.js 5:0-24 11:32-35
+
+webpack 5.99.9 compiled with 2 errors in 56 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.49 MiB
+  asset bundle.js 1.47 MiB [emitted] (name: main)
+  asset main.515eb3c31d3674ddda76.hot-update.js 16.8 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.515eb3c31d3674ddda76.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.49 MiB = bundle.js 1.47 MiB main.515eb3c31d3674ddda76.hot-update.js 16.8 KiB
+cached modules 1.29 MiB [cached] 55 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 6.94 KiB
+  ./src/components/AuthForm.js 3.03 KiB [code generated]
+  ./src/components/AuthForm.css 2.26 KiB [built] [code generated]
+  ./node_modules/css-loader/dist/cjs.js!./src/components/AuthForm.css 1.65 KiB [built] [code generated]
+
+ERROR in ./src/components/FavoritesList.js 2:0-29
+Module not found: Error: Can't resolve './FavoritesList.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+resolve './FavoritesList.css' in '/home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components'
+  using description file: /home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/package.json (relative path: ./src/components)
+    Field 'browser' doesn't contain a valid alias configuration
+    using description file: /home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/package.json (relative path: ./src/components/FavoritesList.css)
+      no extension
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components/FavoritesList.css doesn't exist
+      .js
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components/FavoritesList.css.js doesn't exist
+      .jsx
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components/FavoritesList.css.jsx doesn't exist
+      as directory
+        /home/kavia/workspace/code-generation/recipeexplorer-28256-441f08ee/recipe_frontend_workspace/recipe_frontend/src/components/FavoritesList.css doesn't exist
+ @ ./src/App.js 8:0-55 121:36-49
+ @ ./src/index.js 5:0-24 11:32-35
+
+webpack 5.99.9 compiled with 1 error in 50 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.5 MiB
+  asset bundle.js 1.48 MiB [emitted] (name: main)
+  asset main.50f5307722499bbf67f4.hot-update.js 15.2 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.50f5307722499bbf67f4.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.5 MiB = bundle.js 1.48 MiB main.50f5307722499bbf67f4.hot-update.js 15.2 KiB
+cached modules 1.3 MiB [cached] 57 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 5.64 KiB
+  ./src/components/FavoritesList.js 1.91 KiB [code generated]
+  ./src/components/FavoritesList.css 2.28 KiB [built] [code generated]
+  ./node_modules/css-loader/dist/cjs.js!./src/components/FavoritesList.css 1.45 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 40 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.49 MiB
+  asset bundle.js 1.48 MiB [emitted] (name: main)
+  asset main.3784829861d1b9e2c93e.hot-update.js 4.96 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.3784829861d1b9e2c93e.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.49 MiB = bundle.js 1.48 MiB main.3784829861d1b9e2c93e.hot-update.js 4.96 KiB
+cached modules 1.3 MiB [cached] 59 modules
+runtime modules 27.5 KiB 14 modules
+./node_modules/css-loader/dist/cjs.js!./src/App.css 2.48 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 36 ms

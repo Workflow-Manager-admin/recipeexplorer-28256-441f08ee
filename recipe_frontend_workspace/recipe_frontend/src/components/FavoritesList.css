@@ -1,0 +1,52 @@
+.favorites-section {
+  max-width: 850px;
+  margin: 48px auto 0 auto;
+  padding: 12px 12px 32px 12px;
+}
+
+.favorites-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 28px;
+}
+.favorite-card {
+  background: #142d42;
+  border-radius: 8px;
+  transition: box-shadow 0.20s, background 0.12s;
+  cursor: pointer;
+  margin-bottom: 12px;
+  overflow: hidden;
+  min-height: 175px;
+  box-shadow: 0 2px 14px 0 rgba(0,255,255,0.06);
+  display: flex;
+  flex-direction: column;
+}
+.favorite-card:hover {
+  background: #205874;
+  box-shadow: 0 6px 19px 0 rgba(0,255,255,0.13);
+}
+.favorite-image {
+  width: 100%;
+  height: 88px;
+  background: #29293f;
+  background-size: cover;
+  background-position: center;
+}
+.favorite-info {
+  padding: 12px 13px 8px 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.favorite-info h4 {
+  margin: 0 0 2px 0;
+  font-size: 1.08rem;
+}
+.favorite-category {
+  color: var(--base-light);
+  font-size: 0.95rem;
+}
+.favorites-empty {
+  color: var(--text-secondary);
+  margin: 38px 0 0 0;
+}
